@@ -4,10 +4,10 @@
     <title>Redirection Page</title>
     <script>
         let token = new URLSearchParams(window.location.search).get('token');
-        if (token) {
-            document.querySelector('h1').textContent = `Flutter deeplink - Token: ${token}`;
+        if (token != null) {
+            document.querySelector('h2').textContent = `Token: ${token}`;
         } else {
-            document.querySelector('h1').textContent = 'Flutter deeplink - Token: null';
+            document.querySelector('h2').textContent = 'Token: null';
         }
         let deepLink = 'mediki://reset-password?token=' + token;
         window.location.href = deepLink;
@@ -15,5 +15,6 @@
 </head>
 <body>
 <h1>Flutter deeplink</h1>
+<h2></h2>
 </body>
 </html>
