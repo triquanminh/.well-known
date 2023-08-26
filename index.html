@@ -3,14 +3,14 @@
 <head>
     <title>Redirection Page</title>
     <script>
-        window.onload = function() {
-            let token = new URLSearchParams(window.location.search).get('token');
-            if (token) {
-                document.querySelector('h1').textContent = `Flutter deeplink - Token: ${token}`;
-            } else {
-                document.querySelector('h1').textContent = 'Flutter deeplink - Token: null';
-            }
-        };
+        let token = new URLSearchParams(window.location.search).get('token');
+        if (token) {
+            document.querySelector('h1').textContent = `Flutter deeplink - Token: ${token}`;
+        } else {
+            document.querySelector('h1').textContent = 'Flutter deeplink - Token: null';
+        }
+        let deepLink = 'mediki://reset-password?token=' + token;
+        window.location.href = deepLink;
     </script>
 </head>
 <body>
