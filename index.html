@@ -3,18 +3,20 @@
 <head>
     <title>Redirection Page</title>
     <script>
-        let token = new URLSearchParams(window.location.search).get('token');
-        if (token != null) {
-            document.querySelector('h2').textContent = `Token: ${token}`;
-        } else {
-            document.querySelector('h2').textContent = 'Token: null';
-        }
-        let deepLink = 'mediki://reset-password?token=' + token;
-        window.location.href = deepLink;
+        document.addEventListener('DOMContentLoaded', function () {
+            let token = new URLSearchParams(window.location.search).get('token');
+
+            if (token != null) {
+                document.getElementById('token').textContent = `Token: ${token}`;
+                window.location.href = 'mediki://reset-password?token=' + token;
+            } else {
+                document.getElementById('token').textContent = `Token: null`;
+            }
+        });
     </script>
 </head>
 <body>
 <h1>Flutter deeplink</h1>
-<h2></h2>
+<h2 id="token"></h2>
 </body>
 </html>
