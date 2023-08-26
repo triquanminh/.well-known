@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirection Page</title>
+    <script>
+        // Extract token from URL query parameters
+        var token = new URLSearchParams(window.location.search).get('token');
+
+        // Construct the deep link URL
+        var deepLink = 'mediki://reset-password?token=' + token;
+
+        // Redirect to the deep link
+        window.location.href = deepLink;
+    </script>
+</head>
+<body>
+Redirecting...
+</body>
+</html>
