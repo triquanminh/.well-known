@@ -1,22 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Redirection Page</title>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            let token = new URLSearchParams(window.location.search).get('token');
-
-            if (token != null) {
-                document.getElementById('token').textContent = `Token: ${token}`;
-                window.location.href = 'mediki-app://mediki/reset-password?token=' + token;
-            } else {
-                document.getElementById('token').textContent = `Token: null`;
-            }
-        });
-    </script>
+    <title>Redirecting</title>
 </head>
 <body>
-<h1>Flutter deeplink</h1>
-<h2 id="token"></h2>
+    <h1>Opening Medicare app...</h1>
 </body>
 </html>
